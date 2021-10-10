@@ -35,7 +35,7 @@ def preprocess_features(features):
     return features
 
 def feature_selection(feat, labels, train_ind, dim=2000):
-    estimator = RidgeClassifier(500)
+    estimator = RidgeClassifier()
     selector = RFE(estimator, n_features_to_select=dim, step=100, verbose=0)
     featureX = feat[train_ind, :]
     featureY = labels[train_ind]
